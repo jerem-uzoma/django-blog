@@ -4,7 +4,6 @@ from django.db import connection
 
 
 class ShowSqlMiddleware(MiddlewareMixin):
-    """打印出每次的数据库操作"""
     def process_response(self, request, response):
         if settings.DEBUG:
             for query in connection.queries:
